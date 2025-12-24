@@ -1,0 +1,30 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "cf-navi",
+    "main": "worker/index.ts",
+    "compatibility_date": "2025-04-05",
+    "assets": {
+        "not_found_handling": "single-page-application"
+    },
+    "observability": {
+        "enabled": true
+    },
+    // D1数据库绑定
+    "d1_databases": [
+        {
+            "binding": "DB",
+            "database_name": "zqqnuli-navidb",
+            "database_id": "d34f6b22-183a-4893-abb0-04c131bc8f0a"
+        }
+    ],
+    "vars": {
+        "AUTH_ENABLED": "true",
+        "AUTH_USERNAME": "haluo",
+        "AUTH_PASSWORD": "$2a$12$mw9BUWAliCcZfouhkV/V9.6vUAkLdK5i8COFJR.n3JM.akZmC8e3K",
+        "AUTH_SECRET": "$2y$10$bp1IX5TFea4/AcfiBHTJV.OLsWlLxlRtQkZjZFhAX0PRC5Pg747T6"
+    }
+}
